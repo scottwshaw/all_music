@@ -40,15 +40,21 @@ function rovi(queryTerms) {
     };
 }
 
-http.createServer(function (req, res) {
+http.createServer(function (req, serverres) {
     if(/search/.test(req.url)) {
         var terms = url.parse(req.url,true).query.terms;
-        rovi(terms).makeRequest(function(res) {
-            res.on('data', function(chunk) {
+        rovi(terms).makeRequest(function(clientres) {
+            var body = "";
+            clientres.on('data', function(chunk) {
                 console.log("Data" + chunk);
+                body += chunk;
             });
-            console.log('Got response code:' + res.statusCode);
+            clientres.on('end',function() {
+                serverres.writeHead(200, clientres.headers);
+                serverres.end(body);
+            });
         });
+    } else {
+        file.serve(req, serverres);
     }
-    file.serve(req, res);
 }).listen(8080);
