@@ -20,12 +20,12 @@ function rovi(queryTerms) {
             "apikey=" + apikey + "&" +
             "sig=" + genSig() + "&" +
             "query=" + queryTerms + "&" +
-            "entitytype=song&" +
+            "entitytype=song" /*&" +
             "facet=genre&" +
             "filter=genreid:MA0000002613&" +
             "filter=releasedate>:20090101&" +
             "filter=releasedate<20100101&" +
-            "size=10";
+            "size=10"*/;
     };
     return {
         makeRequest: function makeRequest(callback) {
@@ -42,8 +42,9 @@ function rovi(queryTerms) {
 
 
 http.createServer(function (req, serverres) {
-    if(/search/.test(req.url)) {
+    if(/searchrovi/.test(req.url)) {
         var terms = url.parse(req.url,true).query.terms;
+        console.log(req.url);
         rovi(terms).makeRequest(function(clientres) {
             var body = "";
             clientres.on('data', function(chunk) {
@@ -56,6 +57,7 @@ http.createServer(function (req, serverres) {
             });
         });
     } else {
+        console.log(req.url);
         file.serve(req, serverres);
     }
 }).listen(8080);

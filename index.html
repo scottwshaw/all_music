@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <title>Bootstrap, from Twitter</title>
@@ -46,9 +46,9 @@
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <form action="/search" method="get" class="navbar-form form-search pull-right">
+            <form action="/searchrovi" method="get" class="navbar-form form-search pull-right">
               <input class="text" name="terms" placeholder="search terms">
-              <button type="submit" class="btn">Search</button>
+              <button type="submit" id="search" class="btn">Search</button>
              </form>
           </div><!--/.nav-collapse -->
         </div>
@@ -78,6 +78,13 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/search-all-music.js"></script>
 
+    <!--load my scripts-->
+    <script>
+        $(function() {
+            addSearchFunction();
+        });
+    </script>
   </body>
 </html>
