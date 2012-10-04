@@ -29,10 +29,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="49" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.3278302">
+            <state line="50" column="38" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,16 +41,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="32" selection-start="3670" selection-end="3670" vertical-scroll-proportion="-12.375">
+            <state line="50" column="44" selection-start="2200" selection-end="2200" vertical-scroll-proportion="-2.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search-all-music.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="search-all-music.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/search-all-music.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="5" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
+            <state line="11" column="82" selection-start="476" selection-end="476" vertical-scroll-proportion="0.36320755">
               <folding />
             </state>
           </provider>
@@ -78,9 +78,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/starter-template.html" />
+        <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/search-all-music.js" />
-        <option value="$PROJECT_DIR$/server/server.js" />
       </list>
     </option>
   </component>
@@ -304,7 +304,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -407,23 +407,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="38" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="32" selection-start="3670" selection-end="3670" vertical-scroll-proportion="-12.375">
+        <state line="50" column="44" selection-start="2200" selection-end="2200" vertical-scroll-proportion="-2.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/search-all-music.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="49" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.3278302">
+        <state line="11" column="82" selection-start="476" selection-end="476" vertical-scroll-proportion="0.36320755">
           <folding />
         </state>
       </provider>

@@ -46,16 +46,16 @@
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <form action="/searchrovi" method="get" class="navbar-form form-search pull-right">
+            <form class="navbar-form form-search pull-right">
               <input class="text" name="terms" placeholder="search terms">
-              <button type="submit" id="search" class="btn">Search</button>
+              <button type="submit" id="rovisearch" class="btn">Search</button>
              </form>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="container">
+    <div id="contentarea" class="container">
 
       <h1>Bootstrap starter template</h1>
       <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
@@ -83,7 +83,7 @@
     <!--load my scripts-->
     <script>
         $(function() {
-            addSearchFunction();
+            addSearchButtonClickHandler();
         });
     </script>
   </body>

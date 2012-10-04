@@ -48,7 +48,7 @@ http.createServer(function (req, serverres) {
         rovi(terms).makeRequest(function(clientres) {
             var body = "";
             clientres.on('data', function(chunk) {
-                console.log("Data" + chunk);
+                console.log("Data is: " + chunk);
                 body += chunk;
             });
             clientres.on('end',function() {
