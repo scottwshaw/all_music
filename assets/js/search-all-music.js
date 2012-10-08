@@ -9,12 +9,17 @@ var addSearchButtonClickHandler = function() {
 
             success: function(data) {
                 $('#contentarea').empty();
-                var ul = $('<ul>',{'class': 'artist-list'}).appendTo('#contentarea');
-                $(data.searchResponse.results).each(function(index, item) {
-                    ul.append(
-                        $(document.createElement('li')).text(item.song.primaryArtists[0].name)
-                    );
-                });
+                if(data.searchResponse.totalResultCounts > 0) {
+                    var ul = $('<ul>',{'class': 'artist-list'}).appendTo('#contentarea');
+                    $(data.searchResponse.results).each(function(index, item) {
+                        ul.append(
+                         $(document.createElement('li')).text(item.song.primaryArtists[0].name)
+                        );
+                    });
+                } else {
+                    $('<div>', {'class': 'alert alert-success'}).
+                        text('Your search returned no results').appendTo('#contentarea');
+                }
             }});
         return false;
     };
