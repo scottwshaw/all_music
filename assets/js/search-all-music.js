@@ -3,12 +3,16 @@ var addSearchButtonClickHandler = function() {
     function displayAsList(data) {
         var ul =
             $('<ul>', {'class':'thumbnails'}).
-                appendTo($('<div>', {'class':'span9'}).
+                appendTo($('<div>', {'class':'span12'}).
                 appendTo('#contentarea'));
         $(data.searchResponse.results).each(function (index, item) {
-            ul.append(
-                $('<li>', {'class':'span3'}).text(item.album.primaryArtists[0].name)
-            );
+            var thumb = $('<div>', {'class':'thumbnail'})
+            var title = $('<h3>').text(item.album.title).appendTo(thumb);
+            var artist = $('<h4>').text(item.album.primaryArtists[0].name).appendTo(thumb);
+            var review = $('<p>').text(item.album.headlineReview).appendTo(thumb);
+            var li = $('<li>', {'class':'span3'});
+            thumb.appendTo(li);
+            li.appendTo(ul);
         });
     }
 

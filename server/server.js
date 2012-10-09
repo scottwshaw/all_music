@@ -21,7 +21,7 @@ function rovi(queryTerms) {
             "sig=" + genSig() + "&" +
             "query=" + queryTerms + "&" +
             "entitytype=album" + "&" +
-            "include=similar" /*
+            "include=headlineReview" /*
             "facet=genre&" +
             "filter=genreid:MA0000002613&" +
             "filter=releasedate>:20090101&" +
