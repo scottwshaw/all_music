@@ -1,28 +1,38 @@
-
 var addSearchButtonClickHandler = function() {
-    var searchFunction = function(terms) {
-        console.log('search button clicked with value ' + $('input[name=terms]').val())
+    console.log('adding search button click handler');
+    function displayAsList(data) {
+        var ul = $('<ul>', {'class':'artist-list'}).appendTo('#contentarea');
+        $(data.searchResponse.results).each(function (index, item) {
+            ul.append(
+                $('<li>').text(item.song.primaryArtists[0].name)
+            );
+        });
+    }
+
+    function displayEmptyResults() {
+        $('<div>', {'class':'alert alert-info'}).
+            text('Your search for "' + $('input[name=terms]').val() +
+            '" returned no results').appendTo('#contentarea');
+    }
+
+    var searchFunction = function() {
+        $('body').spin();
+        var success = function(data) {
+            $('#contentarea').empty();
+            if(data.searchResponse.totalResultCounts > 0) {
+                displayAsList(data);
+            } else {
+                displayEmptyResults();
+            }
+            $('body').spin(false);
+        };
         $.ajax({
             url: "/searchrovi",
             type: "GET",
-            data: 'terms=' + $('input[name=terms]').val(),
-
-            success: function(data) {
-                $('#contentarea').empty();
-                if(data.searchResponse.totalResultCounts > 0) {
-                    var ul = $('<ul>',{'class': 'artist-list'}).appendTo('#contentarea');
-                    $(data.searchResponse.results).each(function(index, item) {
-                        ul.append(
-                         $(document.createElement('li')).text(item.song.primaryArtists[0].name)
-                        );
-                    });
-                } else {
-                    $('<div>', {'class': 'alert alert-success'}).
-                        text('Your search returned no results').appendTo('#contentarea');
-                }
-            }});
-        return false;
+            data: 'terms=' + encodeURIComponent($('input[name=terms]').val()),
+            success: success
+        });
+        return false; // prevents further event handling
     };
-    console.log('adding search click event handler')
     $('#rovisearch').click(searchFunction);
 };
