@@ -1,10 +1,13 @@
 var addSearchButtonClickHandler = function() {
     console.log('adding search button click handler');
     function displayAsList(data) {
-        var ul = $('<ul>', {'class':'artist-list'}).appendTo('#contentarea');
+        var ul =
+            $('<ul>', {'class':'thumbnails'}).
+                appendTo($('<div>', {'class':'span9'}).
+                appendTo('#contentarea'));
         $(data.searchResponse.results).each(function (index, item) {
             ul.append(
-                $('<li>').text(item.song.primaryArtists[0].name)
+                $('<li>', {'class':'span3'}).text(item.album.primaryArtists[0].name)
             );
         });
     }

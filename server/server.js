@@ -20,7 +20,8 @@ function rovi(queryTerms) {
             "apikey=" + apikey + "&" +
             "sig=" + genSig() + "&" +
             "query=" + queryTerms + "&" +
-            "entitytype=song" /*&" +
+            "entitytype=album" + "&" +
+            "include=similar" /*
             "facet=genre&" +
             "filter=genreid:MA0000002613&" +
             "filter=releasedate>:20090101&" +
