@@ -9,7 +9,9 @@ var addSearchButtonClickHandler = function() {
             var thumb = $('<div>', {'class':'thumbnail'})
             var title = $('<h3>').text(item.album.title).appendTo(thumb);
             var artist = $('<h4>').text(item.album.primaryArtists[0].name).appendTo(thumb);
-            var review = $('<p>').text(item.album.headlineReview).appendTo(thumb);
+            if(item.album.headlineReview){
+                var review = $('<p>').text(item.album.headlineReview.text).appendTo(thumb);
+            }
             var li = $('<li>', {'class':'span3'});
             thumb.appendTo(li);
             li.appendTo(ul);

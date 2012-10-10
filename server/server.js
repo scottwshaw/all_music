@@ -41,7 +41,6 @@ function rovi(queryTerms) {
     };
 }
 
-
 http.createServer(function (req, serverres) {
     if(/searchrovi/.test(req.url)) {
         var terms = url.parse(req.url,true).query.terms;
